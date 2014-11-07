@@ -9,24 +9,27 @@
     azure account import publishsettings.publishsettings
 ## Adding an affinity group
 If you don't create an affinity group before to try other commands you'll have errors like "parameter.label cannot be empty" what is very confusing.
-
-    azure account affinity-group create affinity-group-name --label affinity-group-label  --location "West Europe"
-
+    
+    azure account affinity-group create {{ azure_affinity_group_name }} --label {{ azure_affinity_group_name }}  --location "{{ azure_affinity_group_location }}"
+    
 ## Adding a cloud service
     
     azure service create --serviceName {{ azure_cloud_service_name }} --description "{{ azure_cloud_service_description }}" --affinitygroup {{ azure_affinity_group_name }}
+    
 ## Adding a storage account
 
-    azure storage account create --description "Storage account description" --location "West Europe" --disable-geoReplication storageAccountName
+    azure storage account create --description "{{ azure_storage_account_description }}" --affinity-group {{ azure_affinity_group_name }} --disable-geoReplication {{ azure_storage_account_name }} --disable-geoReplication storageAccountName
+    
 ## Adding a virtual network 
 **Tested and not working in version 0.8.11** 
 
-    azure network vnet create virtual-network-name --location "West Europe"
+    azure network vnet create {{ azure_virtual_network_name }} --affinity-group {{ azure_affinity_group_name }}
+    
 ## Adding a virtual machine into the cloud service
-### Using parameters
-**Tested and not working in version 0.8.11** 
 
-    azure vm create cloud-service OS_image admin_user --availability-set availability_set --vm-name virtual_machine_name --ssh 22 --no-ssh-password --ssh-cert ~/.ssh/id_rsa.pub.pem --vm-size Large
+### Using parameters
+    
+    azure vm create {{ azure_cloud_service_name }} {{ azure_virtual_machine_image }} {{ azure_virtual_machine_user }} --availability-set {{ azure_virtual_machine_availabolity_set }} --vm-name {{ azure_virtual_machine_base_name }}{{ item }} --ssh {{ azure_virtual_machine_ssh_port }} --no-ssh-password --ssh-cert {{ azure_virtual_machine_user_public_key_path }} --vm-size {{ azure_virtual_machine_size }}
 
 ### Using a json file to create a new virtual machine
 **Tested and not working in version 0.8.11 (rule.oreder index issue)** 
