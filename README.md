@@ -1,4 +1,6 @@
 # Creating a linux based cloud platform in azure from Linux
+** azure-cli version 8.11**
+
 ## Downloding credentials from Azure
     
     azure account download
@@ -6,7 +8,10 @@
 
     azure account import publishsettings.publishsettings
 ## Adding an affinity group
+If you don't create an affinity group before to try other commands you'll have errors like "parameter.label cannot be empty" what is very confusing.
+
     azure account affinity-group create affinity-group-name --label affinity-group-label  --location "West Europe"
+
 ## Adding a cloud service
     
     azure service create --serviceName cloud-service-name --description "cloud-service-name description" --location "West Europe"
