@@ -1,4 +1,12 @@
 # Creating a linux based cloud platform in azure from Linux
+## Downloding credentials from Azure
+    
+    azure account download
+## Importing credentials 
+
+    azure account import publishsettings.publishsettings
+## Adding an affinity group
+    azure account affinity-group create affinity-group-name --label affinity-group-label  --location "West Europe"
 ## Adding a cloud service
     
     azure service create --serviceName cloud-service-name --description "cloud-service-name description" --location "West Europe"
