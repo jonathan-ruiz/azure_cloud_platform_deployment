@@ -1,4 +1,4 @@
-# Creating a cloud platform in azure using "Azure Command-Line Tools for Mac and Linux"
+# Creating a cloud platform in azure from Linux
 ## Adding a cloud service
     
     azure service create --serviceName cloud-service-name --description "cloud-service-name description" --location "West Europe"
