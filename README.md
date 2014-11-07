@@ -14,7 +14,7 @@ If you don't create an affinity group before to try other commands you'll have e
 
 ## Adding a cloud service
     
-    azure service create --serviceName cloud-service-name --description "cloud-service-name description" --location "West Europe"
+    azure service create --serviceName {{ azure_cloud_service_name }} --description "{{ azure_cloud_service_description }}" --affinitygroup {{ azure_affinity_group_name }}
 ## Adding a storage account
 
     azure storage account create --description "Storage account description" --location "West Europe" --disable-geoReplication storageAccountName
