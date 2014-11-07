@@ -9,8 +9,8 @@
 **Tested and not working in version 0.8.11** 
 
     azure network vnet create virtual-network-name --location "West Europe"
-## Adding a virtual machine
-
+## Adding a virtual machine into the cloud service
+**Tested and not working in version 0.8.11 (rule.oreder index issue)**
 ### Using a json file to create a new virtual machine
 **Tested and not working in version 0.8.11 (rule.oreder index issue)** 
 
