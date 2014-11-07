@@ -1,4 +1,4 @@
-# Creating a cloud platform in azure from Linux
+# Creating a linux based cloud platform in azure from Linux
 ## Adding a cloud service
     
     azure service create --serviceName cloud-service-name --description "cloud-service-name description" --location "West Europe"
@@ -10,7 +10,11 @@
 
     azure network vnet create virtual-network-name --location "West Europe"
 ## Adding a virtual machine into the cloud service
-**Tested and not working in version 0.8.11 (rule.oreder index issue)**
+### Using parameters
+**Tested and not working in version 0.8.11** 
+
+    azure vm create cloud-service OS_image admin_user --availability-set availability_set --vm-name virtual_machine_name --ssh 22 --no-ssh-password --ssh-cert ~/.ssh/id_rsa.pub.pem --vm-size Large
+
 ### Using a json file to create a new virtual machine
 **Tested and not working in version 0.8.11 (rule.oreder index issue)** 
 
