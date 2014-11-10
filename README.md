@@ -32,7 +32,7 @@ If you don't create an affinity group before to try other commands you'll have e
     azure vm create {{ azure_cloud_service_name }} {{ azure_virtual_machine_image }} {{ azure_virtual_machine_user }} --availability-set {{ azure_virtual_machine_availabolity_set }} --vm-name {{ azure_virtual_machine_base_name }}{{ item }} --ssh {{ azure_virtual_machine_ssh_port }} --no-ssh-password --ssh-cert {{ azure_virtual_machine_user_public_key_path }} --vm-size {{ azure_virtual_machine_size }}
 
 ### Using a json file to create a new virtual machine
-**Tested and not working in version 0.8.11 (rule.oreder index issue)** 
+**Tested and not working in version 0.8.11 (https://github.com/Azure/azure-sdk-for-node/issues/1335)** 
 
 ## Adding virtual machine endpoints
 
