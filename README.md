@@ -37,3 +37,8 @@ If you don't create an affinity group before to try other commands you'll have e
 ## Adding virtual machine endpoints
 
 ## Adding adding endpoints ACL rules
+
+## Other useful commands
+### Copy files between storage accounts
+
+    azure storage container sas create -a {{ azure_storage_account_name }} -k {{ azure_storage_account_management_key }}
