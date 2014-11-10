@@ -36,7 +36,7 @@ If you don't create an affinity group before to try other commands you'll have e
 
 ## Adding virtual machine endpoints
 
-## Adding adding endpoints ACL rules
+## Adding endpoints ACL rules
 
 ## Other useful commands
 ### Copy files between storage accounts
