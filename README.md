@@ -36,7 +36,10 @@ If you don't create an affinity group before to try other commands you'll have e
 
 ## Adding virtual machine endpoints
 
+    azure vm endpoint create {{ azure_virtual_machine_name }} {{ public_port }} {{ private_port }}
+
 ## Adding endpoints ACL rules
+    ** Not found - Alternatively use 'vm create-from' command **
 
 ## Other useful commands
 ### Copy files between storage accounts
