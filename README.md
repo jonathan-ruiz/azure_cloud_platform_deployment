@@ -48,4 +48,4 @@ If you don't create an affinity group before to try other commands you'll have e
     azure storage blob copy start -a {{ azure_strage_destination_account_name }} -k {{ azure_strage_destination_account_management_key }} {{ azure_source_uri}}?{{ azure_previous_step_generated_shared_access_signatured }} {{ azure_destination_container}}
 ### Create a storage file share
 
-    azure storage share create -a {{azure_storage_account_name}} -k {{ azure_storage_account_key }} {{ azure_storage_file_share_name }}
+    azure storage share create -a {{azure_storage_account_name}} -k {{ azure_storage_account_key }} {{ azure_storage_file_share_name }} ** NOT WORKING **
