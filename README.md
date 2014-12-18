@@ -44,7 +44,7 @@ If you don't create an affinity group before to try other commands you'll have e
 ## Other useful commands
 ### Copy files between storage accounts
 
-    azure storage container sas create -a {{ azure_storage_account_name }} -k {{ azure_storage_account_management_key }}
+    azure storage container sas create -a {{ azure_storage_account_name }} -k {{ azure_storage_account_management_key }} {{ azure_storage_container_name}} {{ azure_storage_premisions }} {{ azure_storage_expiry }}
     azure storage blob copy start -a {{ azure_strage_destination_account_name }} -k {{ azure_strage_destination_account_management_key }} {{ azure_source_uri}}?{{ azure_previous_step_generated_shared_access_signatured }} {{ azure_destination_container}}
 ### Create a storage file share
 
