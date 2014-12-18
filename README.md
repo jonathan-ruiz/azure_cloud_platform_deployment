@@ -1,4 +1,4 @@
-# Creating a linux based cloud platform in azure from Linux
+# Creating a Linux based cloud platform in azure from Linux with azure Linux tools
 ** azure-cli version 8.11**
 
 ## Downloding credentials from Azure
