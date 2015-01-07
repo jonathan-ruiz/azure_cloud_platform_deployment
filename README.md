@@ -25,6 +25,10 @@ If you don't create an affinity group before to try other commands you'll have e
 
     azure network vnet create {{ azure_virtual_network_name }} --affinity-group {{ azure_affinity_group_name }}
     
+## Export Virtual machine configuration
+
+    azure vm export {{ azure_virtual_machine_name }} {{ json_file_path }}
+
 ## Adding a virtual machine into the cloud service
 
 ### Using parameters
