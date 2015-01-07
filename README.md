@@ -53,3 +53,13 @@ If you don't create an affinity group before to try other commands you'll have e
 ### Create a storage file share
 
     azure storage share create -a {{azure_storage_account_name}} -k {{ azure_storage_account_key }} {{ azure_storage_file_share_name }} ** NEED ACCESS TO FILE SHARE SERVICE **
+
+## Adding missing swap to our linux VMs
+For some reason Linux VMs cdon't have swap partition configured, don't waste time trying to enable swap using /etc/waagent.conf when the VM is already provisioned, it doesn't work, check this link for more information: http://feedback.azure.com/forums/216843-virtual-machines/suggestions/6790345-options-to-set-waagent-conf-variables-linux
+The steps bellow shows how to create swap space in the temporal partition resource/. be advise this is not the best practice as resource/ will be removed every time the VMs restarts and you should create the swap file again
+
+    fallocate -l 8g /mnt/resource/swap
+    chmod 600 /mnt/resource/swap
+    mkswap /mnt/resource/swap
+    swapon /mnt/resource/swap
+    echo “/mnt/resource/swap none  swap  sw  0 0” >> /etc/fstab
