@@ -7,7 +7,7 @@
 ## Importing credentials 
 
     azure account import publishsettings.publishsettings
-## Adding an affinity group
+## (Obsolete) Adding an affinity group
 If you don't create an affinity group before to try other commands you'll have errors like "parameter.label cannot be empty" what is very confusing.
     
     azure account affinity-group create {{ azure_affinity_group_name }} --label {{ azure_affinity_group_name }}  --location "{{ azure_affinity_group_location }}"
